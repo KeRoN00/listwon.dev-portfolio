@@ -9,7 +9,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <main className="w-full flex flex-col items-center min-h-screen transition-colors duration-300 ease-in-out">
+      <main className="w-full flex flex-col items-center min-h-screen transition-all duration-500 ease-in-out">
         <Navbar />
         <Hero />
         <p className="text-xl">portfolio</p>
