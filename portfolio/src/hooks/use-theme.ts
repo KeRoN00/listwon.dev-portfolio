@@ -1,12 +1,10 @@
 import {useCallback,useState,useMemo, useEffect} from 'react'
 import { createTheme } from "@mui/material/styles";
 
-
 export const useTheme = () => {
     const [mode, setMode] = useState<'light' | 'dark'>('dark');
-
     const toggleColorMode = useCallback(() => {
-      setMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
+      setMode(prevMode => (prevMode === 'dark' ? 'light' : 'dark'));
     }, []);
   
     const theme = useMemo(
@@ -21,7 +19,7 @@ export const useTheme = () => {
     useEffect(() => {
         document.documentElement.classList.remove('dark', 'light');
         document.documentElement.classList.add(mode);
+        console.log(mode);
       }, [mode]);
-  
     return { mode, toggleColorMode, theme };
 }
